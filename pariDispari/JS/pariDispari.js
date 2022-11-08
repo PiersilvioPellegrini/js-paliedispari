@@ -6,15 +6,11 @@ function verificaDati() {
   let numUser = document.querySelector("[name='numero']");
   let type = document.querySelector("[name='tipo']");
   if (
-    numUser.value == "" ||
-    type.value == "" ||
-    parseInt(numUser.value < 1) ||
-    parseInt(numUser.value) > 5
-  ) {
+    numUser.value == "" || type.value == "" ) {
     console.log("errore");
-    resultEl.innerHTML = "hai inserito dei dati non validi";
+    resultEl.innerHTML = "hai inserito dei dati non validi o mancanti";
     resultEl.style.color = "blue";
-  }
+    }
 }
 
 /**
