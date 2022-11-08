@@ -1,16 +1,16 @@
 /**
     verifica dati inseriti dall'utente
- * 
+    * @param {number} numUser - numero inserito dall'utente
+    * @param {string} type - pari o dispari
  */
 function verificaDati() {
   let numUser = document.querySelector("[name='numero']");
   let type = document.querySelector("[name='tipo']");
-  if (
-    numUser.value == "" || type.value == "" ) {
+  if (numUser.value == "" || type.value == "") {
     console.log("errore");
     resultEl.innerHTML = "hai inserito dei dati non validi o mancanti";
     resultEl.style.color = "blue";
-    }
+  }
 }
 
 /**
@@ -38,25 +38,27 @@ function somma(numUser, numRandom) {
   return numUser + numRandom;
 }
 
-
-
-
-
-// Dichiaro le variabili
+// Dichiaro le variabili input
 const type = document.querySelector("[name='tipo']");
 const numEl = document.querySelector("[name='numero']");
-
+// output
 const resultEl = document.querySelector(".result");
+// Bottone
 const btnEl = document.querySelector(".btn");
 
+// Evento click
 btnEl.addEventListener("click", function () {
+  //   richiamo la funzione verificaDati
   verificaDati();
+  // assegno il valore di input a una varibaile
   const typeValue = type.value;
   console.log(typeValue);
 
   const numUser = parseInt(numEl.value);
+  //   assegnop il valore della funzione getRandomInt a una variabile
   const numRandom = getRandomInt();
   console.log("il nuomero casule è " + numRandom);
+  //   assegno il valore della funzione somma a una variabile
   const sommaNum = somma(numUser, numRandom);
   console.log("la somma è " + sommaNum);
 
